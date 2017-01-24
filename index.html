@@ -1,0 +1,152 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Web App V1, basic JavaScript Skeleton">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Favorite Movies</title>
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="author" href="humans.txt">
+
+    </head>
+    <body>
+		<main>
+
+			<section class="section" id="about" data-route="about">
+				<article>
+					<header>
+						<h1 data-name="title"></h1>
+					</header>
+					<div data-name="description">
+						<p data-name="paragraph"></p>
+					</div>
+				</article>
+			</section>
+
+			<section class="section" id="movies" data-route="movies">
+				<nav class="genre-filter">
+					<div id="pan-filter">
+						<h2>Genres</h2>
+						<ul>
+							<li>
+								<a href="#/movies" class="current">All</a>
+							</li>
+							<li>
+								<a href="#/movies/genre/Action">Action</a>
+							</li>
+							<li>
+								<a href="#/movies/genre/Adventure">Adventure</a>
+							</li>
+							<li>
+								<a href="#/movies/genre/Crime">Crime</a>
+							</li>
+							<li>
+								<a href="#/movies/genre/Horror">Horror</a>
+							</li>
+							
+							<li>
+								<a href="#/movies/genre/Drama">Drama</a>
+							</li>
+							<li>
+								<a href="#/movies/genre/Thriller">Thriller</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<article>
+		            <header>
+		                <h1 data-name="title"></h1>
+		                <h2>Score: <span data-name="reviews"></span></h2>
+		                <em>Release date: <time data-name="release_date"></time></em>
+		            </header>
+
+		            <figure>
+		                <img src="" alt="" data-name="cover">
+		            </figure>
+
+		            <div>
+						<ul data-name="genres">
+							<li>
+								<a data-name="genre"></a>
+							</li>
+						</ul>
+					</div>
+
+		            <p data-name="plot"></p>
+	                
+	                <p><a href="" data-name="readMore">Read More</a></p>
+	            </article>
+		    </section>
+
+            <section class="section" id="detail">
+            	<article>
+	                <header>
+		                <h1 data-name="title"></h1>
+		                <h2>Score: <span data-name="reviews"></span></h2>
+		                <em>Release date: <time data-name="release_date"></time></em>
+	            	</header>
+
+		            <figure>
+		                <img src="" alt="" data-name="cover">
+		            </figure>
+
+		            <div>
+						<ul data-name="genres">
+							<li>
+								<a data-name="genre"></a>
+							</li>
+						</ul>
+					</div>
+
+		            <p data-name="plot"></p>
+				</article>
+
+				<h1>Directors</h1>
+				<div data-name="directors">
+            		<article>
+            			<p>Name: <span data-name="name"></span></p>
+            		</article>
+            	</div>
+
+                <h1>Actors</h1>
+                <div data-name="actors">
+                    <article>
+                        <figure>
+                            <img src="" alt="" data-name="url_photo">
+                        </figure>
+                        <header>
+                        	<ul>
+                        		<li>
+                        			Name: <a href="" data-name="url_profile"><span data-name="actor_name"></span></a>
+                        		</li>
+                        		<li>
+                        			Character: <a href="" data-name="url_character"><span data-name="character"></span></a>
+                        		</li>
+                        	</ul>
+                        </header>
+                    </article>
+                </div>
+            </section>
+		</main>
+
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#/about">About</a></li>
+					<li><a href="#/movies">Movies</a></li>
+				</ul>
+			</nav>
+			<div id="menu-icon">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</header>
+
+		<script src="static/js/vendor/transparency.min.js"></script>
+		<script src="static/js/vendor/underscore.min.js"></script>
+		<script src="static/js/vendor/hammer.min.js"></script>
+		<script src="static/js/vendor/routie.js"></script>
+		<script src="static/js/app.js"></script>
+    </body>
+</html>

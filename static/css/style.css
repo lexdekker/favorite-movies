@@ -1,0 +1,396 @@
+body {
+	font-family: helvetica;
+	background: #F3F3F3;
+	color: #454545;
+}
+
+.loader {
+	margin: 10% 0 0 46%;
+}
+
+/* Default settings */
+	h1 {
+		font-size: 150%;
+	}
+
+	h2 {
+		font-size: 120%;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		line-height: 1.4em;
+		color: #777;
+	}
+
+	/* Toggle */
+	.active{
+		display: block;
+	}
+
+/* Navigation header NAV */
+	body > header {
+		position:fixed;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: inherit;
+		background: #5FD5B3;
+
+	}
+	body > header nav {
+		padding: .45em 1.2em;
+		margin: 0;
+		width: 80%;
+	}
+	body > header ul {
+		list-style-type: none;
+		padding:0;
+	}
+	body > header ul li {
+		display: inline;
+		margin: 0 .4em 0 0;
+
+	}
+	body > header ul li a {
+		color: #fff;
+		background: rgba(0,0,0,.2);
+		font-size: 115%;
+		letter-spacing: .05em;
+		padding: .8em 1em;
+	}
+
+	/* Hamburger Menu */
+		body > header > div {
+			position: absolute;
+			/*background: rgba(0,0,0, .3);*/
+			top: 0;
+			right: -.5em;
+			float: left;
+			padding: 1em 0 1em 1em;
+			margin-top: .313em; 
+
+			-webkit-transition: .3s ease;
+
+		}
+		body > header > div > div {
+			width: 2em;
+			height: 0.313em;
+			background: #fff;
+			border-radius: 2px;
+		}
+
+		body > header > div > div:nth-of-type(n+2) {
+			margin-top: .250em; 
+		}
+
+main {
+	margin-top: 5.5em;
+}
+
+section {
+	display: none;
+	margin: 0 .8em;
+}
+
+
+/* About */
+	section:nth-of-type(1) {
+		background: #fff;
+		padding: 4%;
+	}
+
+	section:nth-of-type(1) article header h1 {
+		margin-top: .3em; 
+	}
+
+/* Movies */
+
+	section:nth-of-type(2) article {
+		border-bottom: 1px solid #D9DAD5;
+		margin-bottom: 2em; 
+		background: #fff;
+		padding: 4%;
+	}
+
+	section:nth-of-type(2) h1 {
+		margin: 0;
+	}
+
+	section:nth-of-type(n+2) article h2 {
+		background: #43B9F9;
+		color: #fff;
+		padding: .5em .8em;
+		margin: .8em 0;
+		display: inline-block;
+	}
+	section:nth-of-type(n+2) em {
+		display: block;
+		color: #B7B7B7;
+	}
+
+	/* movies / movie detail */
+	section:nth-of-type(3) {
+		background: #fff;
+		padding: 4%;
+	}
+	section:nth-of-type(3) article header h1 {
+		margin: 0 0; 
+	}
+	
+	/* Cover */
+		figure {
+			margin: 1em 0 0 0;
+		}
+		
+		section#movies figure img {
+			height: 19.813em;
+		}
+
+	/* Plot */
+		section#movies article > p[data-name="plot"]{
+		    overflow: hidden;
+		    height: 4em;
+			display: -webkit-box;
+		   	-webkit-line-clamp: 3;
+		  	-webkit-box-orient: vertical;
+		   	text-overflow: ellipsis;
+		}
+
+	/* Genre on movie */
+		section article > div:first-of-type ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 1.8em 0;
+		}
+		section article > div:first-of-type ul li {
+			display: inline;
+			margin: 0 .2em 0 0;
+		}
+		section article > div:first-of-type ul li a {
+			color: #34495E;
+			background: #E3E6E6;
+			font-weight: bold;
+			padding: .8em 1em;
+		}
+		section article > div:first-of-type ul li a:hover, 
+		section article > div:first-of-type ul li a:active  {
+			color: #34495E;
+			background: #D2D6D6;
+		}
+
+
+	/* 
+
+		Genre filter:;
+
+		After Gerne is rendered on every movie,
+		hide each Gerne after the first time it's Renderd.
+		(Solving this problem soon)
+
+	*/
+
+		.genre-filter:nth-of-type(n+2) {
+			display: none;
+		}
+
+		.genre-filter {
+			position: fixed;
+			width: 10em;
+			height: 100%;
+			top: 0;
+			right: 0;
+			z-index: 1;
+		}
+			
+		.genre-filter div {
+			top: 4.213em;
+			position: fixed;
+			background: #F9BF3B;
+			background: #586474;
+			width: inherit;
+			height: inherit;
+
+			-webkit-transition: .3s ease;
+			
+		}
+		
+		.genre-filter div h2 {
+			color: #F2F2F2;
+			padding: 0 1em;
+		}
+
+		.genre-filter div ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		.genre-filter div ul li{
+			/*border-bottom: 1px solid tomato;*/
+			
+		}
+
+		.genre-filter div ul li a {
+			display: block;
+			width: 100%;
+			padding: .8em 0;
+			/*background: #6A7788;*/
+			color: #fff;
+			text-align: center;		
+		}
+
+		.genre-filter div ul li a.current, 
+		.genre-filter div ul li a:hover, 
+		.genre-filter div ul li a:active {
+			background: #6A7788;
+			border-left: 4px solid #5FD5B3;	
+		}
+
+		/*#6A7788*/
+		
+		/* Gesture hammer.js */
+
+			/* Genre Filter */
+				/* Menu bar */
+					.panLeft {
+						-ms-transform: translateX(0em); /* IE 9 */
+					   	-webkit-transform: translateX(0em); /* Chrome, Safari, Opera */
+					    transform: translateX(0em);
+					}
+
+					.panRight {
+						-ms-transform: translateX(10em); /* IE 9 */
+					   	-webkit-transform: translateX(10em); /* Chrome, Safari, Opera */
+					    transform: translateX(10em);
+					}
+
+				/* Menu icon*/
+					.slideIn {
+						-ms-transform: translateX(.750em); /* IE 9 */
+					   	-webkit-transform: translateX(.750em); /* Chrome, Safari, Opera */
+					    transform: translateX(.750em);
+					}
+
+					.slideOut {
+						-ms-transform: translateX(0em); /* IE 9 */
+					   	-webkit-transform: translateX(0em); /* Chrome, Safari, Opera */
+					    transform: translateX(0em);
+					}
+
+	/* Directors */
+
+	/* Actors */
+
+		div[data-name="actors"] article ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+@media all and (min-width: 545px) {
+
+   	div[data-name="actors"] {
+	   display: -webkit-flex;
+	   display: flex;
+	   -webkit-align-items: left;
+	   align-items: left;
+	   -webkit-justify-content: left;
+	   justify-content: left;
+	   /* You can set flex-wrap and flex-direction individually */
+	   -webkit-flex-direction: row;
+	   flex-direction: row;
+	   -webkit-flex-wrap: wrap;
+	   flex-wrap: wrap;
+	   /* Or do it all in one line with flex flow */
+	   -webkit-flex-flow: row wrap;
+	   flex-flow: row wrap;
+	   /* tweak the where items line up on the row */
+	   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+	   -webkit-align-content: flex-end;
+	   align-content: flex-end;
+	}
+
+	div[data-name="actors"] article {
+		width: 50%;
+	}
+}
+
+
+@media all and (min-width: 770px) {
+
+   	section:nth-of-type(2) article {
+		width: 45%;
+		float: left;
+		padding: 2%;
+
+	}
+
+	/* 2e row*/
+	section:nth-of-type(2) article:nth-of-type(2n) {
+		margin-left: 2%; 
+	}
+
+	section:nth-of-type(1), section:nth-of-type(3) {
+		padding: 2%;
+
+	}
+}
+
+
+@media all and (min-width: 820px) {
+
+	div[data-name="actors"] article {
+		width: 33%;
+	}
+
+}
+
+@media all and (min-width: 1210px) {
+
+   	section:nth-of-type(2) article {
+		width: 28%;
+		float: left;
+	}
+
+	/* reset 2e row*/
+	section:nth-of-type(2) article:nth-of-type(2n) {
+		margin-left: 0%; 
+	}
+
+	/* 2e row */
+	section:nth-of-type(2) article:nth-of-type(3n-1) {
+		margin-left: 2%; 
+	}
+
+	/* 3e row */
+	section:nth-of-type(2) article:nth-of-type(3n) {
+		margin-left: 2%; 
+	}
+
+	.genre-filter {
+		width: 12em;
+	}
+
+	.panRight {
+		-ms-transform: translateX(12em); /* IE 9 */
+	   	-webkit-transform: translateX(12em); /* Chrome, Safari, Opera */
+	    transform: translateX(12em);
+	}
+
+	div[data-name="actors"] article {
+		width: 25%;
+	}
+
+}
+
+@media all and (min-width: 1400px) {
+
+	div[data-name="actors"] article {
+		width: 20%;
+	}
+	
+}
+
+
